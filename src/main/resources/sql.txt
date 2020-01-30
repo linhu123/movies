@@ -1,0 +1,15 @@
+create table if not exists movies
+(
+	m_id int auto_increment,
+	m_name varchar(45) not null,
+	m_title varchar(45) not null,
+	m_stars int null,
+	m_url varchar(255) null,
+	m_picture varchar(255) null,
+	constraint m_id_UNIQUE
+		unique (m_id)
+); m_picture tinytext mapped to m_picture
+
+alter table movies
+	add primary key (m_id);
+

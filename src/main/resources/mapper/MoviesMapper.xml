@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.movies.mapper.MoviesMapper">
+    <resultMap id="MoviesMap" type="com.example.movies.pojo.Movies" >
+        <result column="m_id" property="mId" />
+        <result column="m_name" property="mName" />
+        <result column="m_title" property="mTitle"/>
+        <result column="m_starts" property="mStarts"/>
+        <result column="m_url" property="mUrl"/>
+        <result column="m_picture" property="mPicture"/>
+    </resultMap>
+    <select id="selectAllMovies"
+        resultMap="MoviesMap">
+        select * from movies;
+    </select>
+</mapper>

@@ -1,12 +1,17 @@
 package com.example.movies.pojo;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
+/**
+ * Comment 实体类
+ */
 public class Comment {
     private Integer cId;
     private Integer mId;
     private String context;
-    private Date createTime;
+    private LocalDateTime createTime;
+    private int deleteFlag = 0;//0 表示正常 1 表示错误
 
     public Integer getcId() {
         return cId;
@@ -32,11 +37,11 @@ public class Comment {
         this.context = context;
     }
 
-    public Date getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
 }

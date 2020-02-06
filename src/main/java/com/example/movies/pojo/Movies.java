@@ -1,5 +1,7 @@
 package com.example.movies.pojo;
 
+import java.time.LocalDateTime;
+
 public class Movies {
     private Integer mId;
     private String mName;
@@ -7,6 +9,8 @@ public class Movies {
     private int mStars;//星数
     private String mUrl;
     private String mPicture;
+    private LocalDateTime createTime;
+    private int deleteFlag;
 
     @Override
     public String toString() {
@@ -17,6 +21,8 @@ public class Movies {
                 ", mStars=" + mStars +
                 ", mUrl='" + mUrl + '\'' +
                 ", mPicture='" + mPicture + '\'' +
+                ", createTime=" + createTime +
+                ", deleteFlag=" + deleteFlag +
                 '}';
     }
 
@@ -66,5 +72,21 @@ public class Movies {
 
     public void setmPicture(String mPicture) {
         this.mPicture = mPicture;
+    }
+
+    public LocalDateTime getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(LocalDateTime createTime) {
+        this.createTime = createTime;
+    }
+
+    public int getDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(int deleteFlag) {
+        this.deleteFlag = deleteFlag;
     }
 }

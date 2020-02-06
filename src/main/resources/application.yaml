@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/videodb?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/videodb?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&zeroDateTimeBehavior=convertToNull
     username: root
     password: 123456
   http:

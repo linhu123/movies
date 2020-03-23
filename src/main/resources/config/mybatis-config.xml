@@ -5,9 +5,11 @@
 <configuration>
     <typeAliases>
 <!--        <package name="com.example.movies.mapper"/>-->
+        <package name="com.example.movies.pojo"/>
     </typeAliases>
     <!--<mappers>-->
     <!--<mapper resource="sample/mybatis/mapper/CityMapper.xml"/>-->
     <!--<mapper resource="sample/mybatis/mapper/HotelMapper.xml"/>-->
     <!--</mappers>-->
+
 </configuration>

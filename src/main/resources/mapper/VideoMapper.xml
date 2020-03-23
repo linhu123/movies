@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.movies.mapper.VideoMapper">
+        <select id="selectAllVideos" resultType="VideoInfo">
+        select * from video_info where v_delete = 0;
+    </select>
+
+    <!--根据videoid进行查询-->
+    <select id="selectVideoById" resultType="VideoInfo" parameterType="integer">
+        select * from video_info where v_delete = 0 and v_id = #{value};
+    </select>
+    
+    <insert id="insertOneVideo" parameterType="VideoInfo">
+
+    </insert>
+
+    <!--根据vId进行删除-->
+    <update id="deleteVideo" parameterType="integer" >
+        update video_info set v_delete = 1 where v_id = #{value} and v_delete = 0;
+    </update>
+
+    <select id="totleVideo" resultType="integer">
+       select count(*) from video_info where v_delete = 0;
+    </select>
+
+    <select id="selectPageVideos" resultType="VideoInfo" parameterType="java.util.Map">
+        select * from video_info where v_delete = 0 limit #{currentIndex},#{pageSize};
+    </select>
+
+
+</mapper>

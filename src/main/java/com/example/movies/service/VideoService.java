@@ -17,7 +17,6 @@ public class VideoService {
 
     private static Logger logger = LoggerFactory.getLogger(VideoService.class);
 
-
     @Autowired
     private VideoMapper videoMapper;
 

@@ -1,7 +1,9 @@
 package com.example.movies.controller;
 
 import com.example.movies.common.ServerResponse;
+import com.example.movies.pojo.Tv;
 import com.example.movies.pojo.VideoInfo;
+import com.example.movies.service.TvService;
 import com.example.movies.service.VideoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +19,8 @@ public class VideoController {
 
     @Autowired
     private VideoService videoService;
+    @Autowired
+    private TvService tvService;
     /**
      * 电影列举
      * @return
@@ -46,6 +50,12 @@ public class VideoController {
     @RequestMapping(value = "/add")
     public void addVideo(){
 
+    }
+    @GetMapping("/playId")
+    public ServerResponse playId(@RequestParam Integer v_id){
+        logger.info(String.format("playId is call ,v_id is %s", v_id));
+        List<Tv> tvList = tvService.seleceTvByVId(v_id);
+        return ServerResponse.success("success",tvList);
     }
 
 

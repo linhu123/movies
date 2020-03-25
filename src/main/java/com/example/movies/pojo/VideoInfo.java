@@ -14,5 +14,4 @@ public class VideoInfo {
     private Integer v_language;
     private Integer v_delete;
     private String v_image_url;
-
 }

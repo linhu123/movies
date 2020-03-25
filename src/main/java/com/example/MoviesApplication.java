@@ -1,8 +1,11 @@
-package com.example.movies;
+package com.example;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.example.netty.HttpStaticFileServer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
@@ -14,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
-public class MoviesApplication {
+public class MoviesApplication implements CommandLineRunner {
 
 	/**
 	 * 配置FastJson方式二
@@ -43,4 +46,8 @@ public class MoviesApplication {
 		SpringApplication.run(MoviesApplication.class, args);
 	}
 
+	@Override
+	public void run(String... args) throws Exception {
+		HttpStaticFileServer.nettyStart();
+	}
 }
